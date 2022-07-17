@@ -25,6 +25,9 @@ public class Product {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
+    @ManyToOne
+    private User user;
+
     private Date createdDate;
 
     private Date modifiedDate;
@@ -86,6 +89,14 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Date getCreatedDate() {
